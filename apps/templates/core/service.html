@@ -1,0 +1,46 @@
+{% extends 'base-page.html' %}
+{% load static thumbnail %}
+{% block content %}
+<!-- SECTION CONTENT -->
+<div class="section-full p-t80 p-b50  ">
+    <div class="container">
+      <!-- TITLE START -->
+        <div class="section-head text-center">
+                <h2 class="text-uppercase">Наши услуги</h2>
+                <div class="wt-separator-outer">
+                   <div class="wt-separator style-square">
+                       <span class="separator-left bg-primary"></span>
+                       <span class="separator-right bg-primary"></span>
+                   </div>
+               </div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book has survived.</p>
+            </div>
+        <!-- TITLE END -->
+        <div class="section-content">
+            <div class="row">
+              {% for item in service_list %}
+                <div class="col-md-4 col-sm-4 p-tb15">
+                    <div class="wt-box bg-white">
+                        <div class="wt-media">
+                            <a href="{% url 'page' slug=item.slug %}">
+                              {% thumbnail item.image "300x180" crop="center" as im %}
+                              <img src="{{im.url}}" alt="{{item.title}}">
+                              {% endthumbnail %}
+                            </a>
+                        </div>
+                        <div class="wt-info p-tb30">
+                            <h4 class="wt-title m-t0"><a href="{% url 'page' slug=item.slug %}">{{item.title}}</a></h4>
+
+                            <a href="javascript:void(0);" class="site-button outline   black"><strong class="text-center">Подробнее</strong></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- SECTION CONTENT END -->
+{% endblock %}

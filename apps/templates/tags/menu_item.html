@@ -1,0 +1,14 @@
+{% for menu in menu_list%}
+      <li>
+          <a href="{% if menu.slug == 'index' %}/{% else %}{{menu.slug}}{% endif %}">{{menu}}</a>
+          {% if menu.page_set.all %}
+          <ul class="sub-menu">
+            {% for item in menu.page_set.all %}
+            <li>
+                <a href="{{item.slug}}">{{item}}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+      </li>
+{% endfor %}

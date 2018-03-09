@@ -1,0 +1,47 @@
+{% load thumbnail %}
+<div class="section-full bg-white p-tb80 scale-bg-top scale-bg-bottom">
+
+    <div class="container">
+        <div class="section-head text-center">
+
+          <h2 class="text-uppercase ">Несколько наших работ</h2>
+
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>
+            <p>Здесь представлены последние наши работы, чтобы посмотреть все работы нажмите здесь</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="portfolio-wrap mfp-gallery no-col-gap">
+                {% for item in portfolio_list %}
+                <div class="masonry-item cat-1 col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                    <div class="wt-gallery-bx">
+                        <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow">
+                            <a href="javascript:void(0);">
+                                {% thumbnail item.image "300x180" crop="center" as im %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{item.title}}">
+                                {% endthumbnail %}
+                            </a>
+                            <div class="overlay-bx">
+                                <div class="overlay-icon">
+                                    <a href="javascript:void(0);">
+                                        <i class="fa fa-external-link wt-icon-box-xs"></i>
+                                    </a>
+                                    <a href="{{item.image.url}}" class="mfp-link">
+                                        <i class="fa fa-arrows-alt wt-icon-box-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

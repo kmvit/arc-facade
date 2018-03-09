@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+{% include 'includes/head.html' %}
+
+<body>
+
+	<div class="page-wraper">
+
+        <!-- HEADER START -->
+        {% include 'includes/header.html' %}
+        <!-- HEADER END -->
+
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- Slider -->
+						{% block slider %}
+						{% endblock %}
+
+            <!-- Slider END -->
+
+            <!-- ABOUT COMPANY SECTION START -->
+            {% block about_company %}
+
+            {% endblock %}
+            <!-- ABOUT COMPANY SECTION END -->
+
+            <!-- SERVICES START  -->
+            {% block service %}
+						{% endblock %}
+            <!-- SERVICES CONTENT END -->
+
+            <!-- SECTION CONTENT START -->
+            {% block main_content %}
+            {% endblock %}
+            <!-- SECTION CONTENT  END -->
+
+            <!-- LATEST PROJECT SECTION START -->
+            {% block latest-project %}
+            {% endblock %}
+            <!-- LATEST PROJECT SECTION END -->
+
+            <!-- COMPANY DETAIL SECTION START -->
+            {% block company_detail %}
+
+            {% endblock %}
+            <!-- COMPANY DETAIL SECTION End -->
+
+            <!-- WHY CHOOSE US SECTION START  -->
+            {% block why_choose_us %}
+            {% endblock %}
+            <!-- WHY CHOOSE US SECTION END  -->
+						<div class="call-to-action-wrap call-to-action-skew bg-primary bg-no-repeat" style="background-image:url(images/background/bg-4.png);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8">
+                            <div class="call-to-action-left p-tb20 p-r50">
+                                <h4 class="text-uppercase m-b10">Закажите расчет сметы прямо сейчас</h4>
+                                <p>Наш специалист приедет и составит для вас смету абсолютно бесплатно.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="call-to-action-right p-tb30">
+                                <button type="button" class="site-button-secondry m-r15 text-uppercase font-weight-600 " data-toggle="modal" data-target="#with-form">Вызвать специалиста<i class="fa fa-angle-double-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+						<div id="with-form" class="modal fade" role="dialog" style="display: none;">
+                                  <div class="modal-dialog" style="margin-top: 20.5px;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header bg-primary">
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                        <h4 class="modal-title text-white">Заказать расчет</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form id="demo-form" class="form-horizontal mb-lg" novalidate="">
+                                            <div class="form-group mt-lg">
+                                                <label class="col-sm-3 control-label">Имя</label>
+                                                <div class="col-sm-9">
+                                                    <input name="name" class="form-control" placeholder="Введите Имя..." required="" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Телефон</label>
+                                                <div class="col-sm-9">
+                                                    <input name="email" class="form-control" placeholder="Введите номер..." required="" type="email">
+                                                </div>
+                                            </div>
+                                        </form>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="site-button  m-r15" data-dismiss="modal">Закрыть
+                                         <i class="fa fa-angle-double-right"></i></button>
+
+                                        <button type="button" class="site-button ">Отправить
+                                         <i class="fa fa-angle-double-right"></i></button>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+            <!-- TESTIMONIAL SECTION START -->
+            {% block testimonials %}
+            {% endblock %}
+            <!-- TESTIMONIAL SECTION END -->
+
+            <!-- LATEST BLOG SECTION START -->
+            {% block latest-blog %}
+            {% endblock %}
+            <!-- LATEST BLOG SECTION END -->
+
+
+            <!-- OUR CLIENT SLIDER START -->
+            {% include 'includes/slider_client.html' %}
+            <!-- OUR CLIENT SLIDER END -->
+
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START -->
+        {% include 'includes/footer.html' %}
+        <!-- FOOTER END -->
+
+
+        <!-- SCROLL TOP BUTTON -->
+        <button class="scroltop"><span class=" iconmoon-house relative" id="btn-vibrate"></span>Вверх</button>
+
+        <!-- MODAL  LOGIN -->
+        {% include 'includes/modal.html' %}
+        <!-- MODAL LOGIN END -->
+    </div>
+
+{% include 'includes/js.html' %}
+
+<!-- LOADING AREA START ===== -->
+<div class="loading-area">
+    <div class="loading-box"></div>
+    <div class="loading-pic">
+        <div class="loader">
+            <span class="block-1"></span>
+            <span class="block-2"></span>
+            <span class="block-3"></span>
+            <span class="block-4"></span>
+            <span class="block-5"></span>
+            <span class="block-6"></span>
+            <span class="block-7"></span>
+            <span class="block-8"></span>
+            <span class="block-9"></span>
+            <span class="block-10"></span>
+            <span class="block-11"></span>
+            <span class="block-12"></span>
+            <span class="block-13"></span>
+            <span class="block-14"></span>
+            <span class="block-15"></span>
+            <span class="block-16"></span>
+        </div>
+    </div>
+</div>
+<!-- LOADING AREA  END ====== -->
+
+
+</body>
+
+</html>

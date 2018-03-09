@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static thumbnail %}
+{% load core_tags %}
+{% block slider %}
+
+<div class="main-slider style-two default-banner">
+  <div class="tp-banner-container">
+        <div class="tp-banner" >
+            <!-- START REVOLUTION SLIDER 5.4.1 -->
+
+          <div id="rev_slider_1014_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="typewriter-effect" data-source="gallery">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text-banner">
+                    <p class="title"> Мы предлагаем:</p>
+                    <ol class="list-num-count vertical-align">
+                      {% for item in service_list %}
+                      <li><a href="{% url 'page' slug=item.slug %}">{{item}}</a></li>
+                      {% endfor %}
+                    </ol>
+                  </div>
+                </div>
+                  <div class="col-md-6">
+                    df
+                      <img src="{% static 'images/banner/afternow.png' %}" alt="" class="img-fluid">
+                  </div>
+              </div>
+            </div>
+
+
+                    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+            </div>
+            <!-- END REVOLUTION SLIDER -->
+        </div>
+  </div>
+</div>
+<div class="section-full bg-primary">
+                <div class="container our-value">
+                     <div class="row">
+                        <div class="col-md-8 col-sm-8 p-t15 p-b30 our-value-left">
+                             <div class="clearfix">
+                                <div class="col-md-6 p-tb10">
+                                    <div class="wt-icon-box-wraper left ">
+                                        <div class="icon-md">
+                                            <div class="icon-cell text-white">
+                                                <span class="flaticon-construction-4"></span>
+                                            </div>
+                                        </div>
+                                        <div class="icon-content text-secondry">
+                                            <h5 class="wt-tilte text-uppercase m-b5">Производство</h5>
+                                            <p>Собственное производство<br/> фасадного декора .</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 p-tb10">
+                                    <div class="wt-icon-box-wraper left">
+                                        <div class="icon-md text-primary">
+                                            <div class="icon-cell text-white">
+                                                <span class="flaticon-people-1"></span>
+                                            </div>
+                                        </div>
+                                        <div class="icon-content text-secondry">
+                                            <h5 class="wt-tilte text-uppercase m-b0">Профессионалы</h5>
+                                            <p>Только высококвалифицированные <br/>специалисты .</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 p-t50 p-b50 col-md-offset-1 our-value-right">
+                            <button type="button" class="site-button-secondry m-r15 text-uppercase font-weight-600 " data-toggle="modal" data-target="#with-form">Заказать расчет</button>
+                        </div>
+                     </div>
+                </div>
+             </div>
+{% endblock %}
+{% block about_company %}
+<div class="section-full p-tb100 bg-gray">
+  {{page.content|safe}}
+</div>
+{% endblock %}
+{% block service %}
+<div class="section-full bg-white p-t80 p-b50 scale-bg-top scale-bg-bottom">
+    <div class="container">
+        <!-- IMAGE CAROUSEL START -->
+
+          <!-- TITLE START -->
+            <div class="section-head text-center">
+                <h2 class="text-uppercase">Полный список предоставляемых услуг</h2>
+                <div class="wt-separator-outer">
+                    <div class="wt-separator style-square">
+                      <span class="separator-left bg-primary"></span>
+                      <span class="separator-right bg-primary"></span>
+                  </div>
+                </div>
+                <p>Основной деятельностью нашей компании являются услуги в области строительства и реконструкции:</p>
+            </div>
+          <!-- TITLE END -->
+
+            <!-- CAROUSEL -->
+            <div class="section-content">
+
+                <div class="owl-carousel Home-services-carousel owl-btn-vertical-center">
+                    {% for item in service_list %}
+                    <div class="item">
+                      <div class="wt-box bg-white">
+                            <div class="wt-media">
+                                <a href="javascript:void(0);">
+                                  {% thumbnail item.image "350x180" crop="center" as im %}
+                                  <img src="{{im.url}}" alt="{{item.title}}">
+                                  {% endthumbnail %}
+                                </a>
+                            </div>
+                            <div class="wt-info p-tb30">
+                                <h4 class="wt-title m-t0 m-b5"><a href="javascript:void(0);">{{item.title}}</a></h4>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+</div>
+</div>
+
+{% endblock %}
+{% block main_content %}
+<div class="section-full  p-tb80 bg-no-repeat bg-cover " style="background-image:url({% static 'images/background/bg5.jpg' %});">
+  {{page.block_html|safe}}
+</div>
+{% endblock %}
+{% block latest-project %}
+{% last_in_portfolio %}
+{% endblock %}
+{% block company_detail %}
+<div class="section-full  p-t50 p-b10 overlay-wraper bg-repeat"  data-stellar-background-ratio="0.5"  style="background-image:url({% static 'images/switcher/switcher-patterns/large/pt2.jpg' %})">
+  <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+
+        <div class="section-content">
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="m-b30 text-white text-center">
+                        <div class="icon-lg m-b20"><i class="fa fa-building"></i></div>
+                        <div class="counter font-26 font-weight-800 m-b5">250</div>
+                        <span>ВЫПОЛНЕННЫЕ ПРОЕКТЫ</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="m-b30 text-white text-center">
+                        <div class="icon-lg m-b20"><i class="fa fa-users"></i></div>
+                        <div class="font-26 font-weight-800 m-b5"><span class="counter">250</span><b>+</b></div>
+                        <span>СЧАСТЛИВЫХ КЛИЕНТОВ</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="m-b30  text-white text-center">
+                        <div class="icon-lg m-b20"><i class="fa fa-user-plus"></i></div>
+                        <div class="counter font-26 font-weight-800 m-b5">25</div>
+                        <span>РАБОЧЕГО ПЕРСОНАЛА</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="m-b30 text-white text-center">
+                        <div class="icon-lg m-b20"><i class="fa fa-pencil"></i></div>
+                        <div class="counter font-26 font-weight-800 m-b5">26</div>
+                        <span>ДИЗАЙН ПРОЕКТОВ</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+{% block why_choose_us %}
+<div class="section-full bg-gray p-t80 p-b120 bg-no-repeat bg-left-center" style="background-image:url({% static 'images/background/why-choose-pic-2.png' %});">
+  {{page.block_html_2|safe}}
+</div>
+{% endblock %}
+{% block testimonials %}
+<div class="section-full p-t80 p-b50 overlay-wraper bg-parallax"  data-stellar-background-ratio="0.5"  style="background-image:url({% static 'images/background/bg9.jpg' %})">
+  <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+      <!-- TITLE START -->
+        <div class="section-head text-center text-white">
+            <h2 class="text-uppercase">Что о нас говорят клиенты</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square has-bg">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>
+
+        </div>
+        <!-- TITLE END -->
+
+        <!-- TESTIMONIAL 1 START ON BACKGROUND -->
+        <div class="section-content">
+            <div class="owl-carousel testimonial-one">
+                <div class="item">
+                    <div class="testimonial-1 testimonial-bg">
+                        <div class="testimonial-pic  radius shadow"><img src="{% static 'images/testimonials/pic1.jpg' %}" width="100" height="100" alt=""></div>
+                        <div class="testimonial-detail">
+                            <strong class="testimonial-name">Михаил</strong>
+                            <span class="testimonial-position">Директор "РивГош"</span>
+                        </div>
+                        <div class="testimonial-text">
+                            <p> Все было сделано на высшем уровне, спасибо за выполненную работу. Продолжаем сотрудничать</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-1 testimonial-bg">
+                        <div class="testimonial-pic  radius shadow"><img src="{% static 'images/testimonials/pic1.jpg' %}" width="100" height="100" alt=""></div>
+                        <div class="testimonial-detail">
+                            <strong class="testimonial-name">Михаил</strong>
+                            <span class="testimonial-position">Директор "РивГош"</span>
+                        </div>
+                        <div class="testimonial-text">
+                            <p> Все было сделано на высшем уровне, спасибо за выполненную работу. Продолжаем сотрудничать</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-1 testimonial-bg">
+                        <div class="testimonial-pic  radius shadow"><img src="{% static 'images/testimonials/pic1.jpg' %}" width="100" height="100" alt=""></div>
+                        <div class="testimonial-detail">
+                            <strong class="testimonial-name">Михаил</strong>
+                            <span class="testimonial-position">Директор "РивГош"</span>
+                        </div>
+                        <div class="testimonial-text">
+                            <p> Все было сделано на высшем уровне, спасибо за выполненную работу. Продолжаем сотрудничать</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block latest-blog %}
+
+{% endblock %}

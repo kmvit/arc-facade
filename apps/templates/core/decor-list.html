@@ -1,0 +1,82 @@
+{% extends 'base-page.html' %}
+{% load static thumbnail %}
+
+{% block content %}
+<div class="section-full  p-t80 p-b50  ">
+                <div class="container  bg-white ">
+                        <div class="row">
+                        <!-- LEFT PART -->
+                        <div class="col-md-3 col-sm-3 p-tb15">
+
+
+                            <!-- WHAT WE DO -->
+                            <div class="wt-nav-block m-b30">
+                                <h2 class="wt-nav-title">Услуги</h2>
+                                <ul class="wt-nav wt-nav-pills">
+                                  {% for item in service_list %}
+                                  <li><a href="{% url 'page' slug=item.slug %}">{{item}}</a></li>
+                                  {% endfor %}
+                                </ul>
+                            </div>
+
+                            <!-- CONTACT US -->
+                            <div class="widget bg-white  widget_getintuch">
+                                <h4 class="widget-title">Контакты</h4>
+                                <ul>
+                                  <li><i class="fa fa-map-marker"></i><strong>Адрес</strong> Пятигорск, Бештаугорское шоссе  </li>
+                                  <li><i class="fa fa-phone"></i><strong>Телефон</strong>8(800)777-1845</li>
+                                  <li><i class="fa fa-envelope"></i><strong>Email</strong>info@arh-fasad.ru</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- LEFT PART -->
+
+                        <!-- RIGHT PART -->
+                        <div class="col-md-9 col-sm-9 p-tb10">
+                            <!-- BLOG POST CAROUSEL -->
+                            <div class="section-head text-center">
+                                    <h2 class="text-uppercase">{{page.title}}</h2>
+                                    <div class="wt-separator-outer">
+                                       <div class="wt-separator style-square">
+                                           <span class="separator-left bg-primary"></span>
+                                           <span class="separator-right bg-primary"></span>
+                                       </div>
+                                   </div>
+                                    {{page.content|safe}}
+                                </div>
+                            <!-- TITLE END -->
+                            <div class="section-content">
+                                <div class="row">
+                                  {% for item in decor_list %}
+                                    <div class="col-md-4 col-sm-4 p-tb15">
+                                        <div class="wt-box bg-white">
+                                            <div class="wt-media">
+                                                <a href="{% url 'page' slug=item.slug %}">
+                                                  {% thumbnail item.image "300x180" crop="center" as im %}
+                                                  <img src="{{im.url}}" alt="{{item.title}}">
+                                                  {% endthumbnail %}
+                                                </a>
+                                            </div>
+                                            <div class="wt-info p-tb30">
+                                                <h4 class="wt-title m-t0"><a href="{% url 'page' slug=item.slug %}">{{item.title}}</a></h4>
+
+                                                <a href="javascript:void(0);" class="site-button outline   black"><strong class="text-center">Подробнее</strong></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                         </div>
+                        <!-- RIGHT PART -->
+                    </div>
+                </div>
+             </div>
+
+{% endblock %}
+{% block html_block %}
+{{page.html_block|safe}}
+{% endblock %}
+{% block html_block2 %}
+{{page.html_block2|safe}}
+{% endblock %}

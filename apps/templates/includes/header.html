@@ -1,0 +1,116 @@
+{% load static %}
+{% load core_tags %}
+
+<header class="site-header header-style-8">
+
+            <div class="top-bar bg-primary">
+                <div class="container">
+                    <div class="row">
+                        <div class="clearfix">
+                        	<div class="wt-topbar-left">
+                           	    <ul class="list-unstyled e-p-bx pull-left">
+                                    <li><i class="fa fa-envelope"></i>info@arh-fasad.ru</li>
+                                    <li><i class="fa fa-phone"></i>8(800) 777-1845</li>
+                                </ul>
+                            </div>
+
+                        	<div class="wt-topbar-right">
+                        		<ul class="list-unstyled e-p-bx pull-right">
+
+                                  <li><a href="javascript:void(0);" class="fa fa-vk"></a></li>
+                                  <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+                                  <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+                                  <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search Link -->
+
+			<!-- Search Form -->
+            <div class="header-middle bg-white">
+                <div class="container">
+                    <div class="logo-header">
+                        <a href="/">
+                            <img src="{% static 'images/logo-14.png' %}" width="216" height="37" alt="Логотип">
+                        </a>
+                    </div>
+                    <div class="header-info">
+                        <ul>
+                        	<li>
+                                <div>
+                                    <div class="icon-sm">
+                                        <span class="icon-cell  text-primary"><i class="iconmoon-travel"></i></span>
+                                    </div>
+                                    <div class="icon-content">
+                                        <strong>Пятигорск </strong>
+                                        <span>Бештаугорское шоссе</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="icon-sm">
+                                        <span class="icon-cell  text-primary"><i class="iconmoon-smartphone-1"></i></span>
+                                    </div>
+                                    <div class="icon-content">
+                                        <strong>Телефон</strong>
+                                        <span>8(800) 777-1845</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="btn-col-last">
+                                <div>
+                                    <div class="icon-sm">
+                                        <span class="icon-cell  text-primary"><i class="iconmoon-email"></i></span>
+                                    </div>
+                                    <div class="icon-content">
+                                        <strong>Время работы </strong>
+                                        <span>ПН-ПТ: 9:00 - 18:00 </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+			<!-- Search Form -->
+            <div class="sticky-wrapper" style=""><div class="sticky-header main-bar-wraper">
+              <div class="main-bar header-botton nav-bg-secondry">
+                  <div class="container">
+                      <!-- NAV Toggle Button -->
+                      <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+                          <span class="sr-only">Меню</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <!-- ETRA Nav -->
+
+                      <!-- SITE Search -->
+                      <div id="search">
+                          <span class="close"></span>
+                          <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
+                              <div class="input-group">
+                                  <input value="" name="q" type="search" placeholder="Type to search"/>
+                                  <span class="input-group-btn"><button type="button" class="search-btn"><i class="fa fa-search"></i></button></span>
+                              </div>
+                          </form>
+                      </div>
+
+                      <!-- MAIN Nav -->
+                      <div class="header-nav navbar-collapse collapse ">
+                          <ul class=" nav navbar-nav">
+                            {% menu_item %}
+                          </ul>
+                      </div>
+
+                        </div>
+                  </div>
+            </div></div>
+
+        </header>

@@ -1,0 +1,95 @@
+{% extends 'base-page.html' %}
+{% load static thumbnail %}
+
+{% block content %}
+<div class="section-full  p-t80 p-b50  ">
+                <div class="container  bg-white ">
+                        <div class="row">
+                        <!-- LEFT PART -->
+                        <div class="col-md-3 col-sm-3 p-tb15">
+
+
+                            <!-- WHAT WE DO -->
+                            <div class="wt-nav-block m-b30">
+                                <h2 class="wt-nav-title">Услуги</h2>
+                                <ul class="wt-nav wt-nav-pills">
+                                  {% for item in service_list %}
+                                  <li><a href="{% url 'page' slug=item.slug %}">{{item}}</a></li>
+                                  {% endfor %}
+                                </ul>
+                            </div>
+
+                            <!-- CONTACT US -->
+                            <div class="widget bg-white  widget_getintuch">
+                                <h4 class="widget-title">Контакты</h4>
+                                <ul>
+                                  <li><i class="fa fa-map-marker"></i><strong>Адрес</strong> Пятигорск, Бештаугорское шоссе  </li>
+                                  <li><i class="fa fa-phone"></i><strong>Телефон</strong>8(800)777-1845</li>
+                                  <li><i class="fa fa-envelope"></i><strong>Email</strong>info@arh-fasad.ru</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- LEFT PART -->
+
+                        <!-- RIGHT PART -->
+                        <div class="col-md-9 col-sm-9 p-tb10">
+                            <!-- BLOG POST CAROUSEL -->
+                             <div class="section-content ">
+                                <div class="wt-box">
+                                	<h2>{{page.title}}</h2>
+                                </div>
+                                {{page.content|safe}}
+                             </div>
+
+                         </div>
+                        <!-- RIGHT PART -->
+                    </div>
+                </div>
+             </div>
+             <div class="section-full bg-primary">
+                             <div class="container our-value">
+                                  <div class="row">
+                                     <div class="col-md-8 col-sm-8 p-t15 p-b30 our-value-left">
+                                          <div class="clearfix">
+                                             <div class="col-md-6 p-tb10">
+                                                 <div class="wt-icon-box-wraper left ">
+                                                     <div class="icon-md">
+                                                         <div class="icon-cell text-white">
+                                                             <span class="flaticon-construction-4"></span>
+                                                         </div>
+                                                     </div>
+                                                     <div class="icon-content text-secondry">
+                                                         <h5 class="wt-tilte text-uppercase m-b5">Производство</h5>
+                                                         <p>Собственное производство<br> фасадного декора .</p>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-6 p-tb10">
+                                                 <div class="wt-icon-box-wraper left">
+                                                     <div class="icon-md text-primary">
+                                                         <div class="icon-cell text-white">
+                                                             <span class="flaticon-people-1"></span>
+                                                         </div>
+                                                     </div>
+                                                     <div class="icon-content text-secondry">
+                                                         <h5 class="wt-tilte text-uppercase m-b0">Профессионалы</h5>
+                                                         <p>Только высококвалифицированные <br>специалисты .</p>
+                                                     </div>
+                                                 </div>
+                                             </div>
+
+                                         </div>
+                                     </div>
+                                     <div class="col-md-3 col-sm-3 p-t50 p-b50 col-md-offset-1 our-value-right">
+                                         <button type="button" class="site-button-secondry m-r15 text-uppercase font-weight-600 " data-toggle="modal" data-target="#with-form">Заказать расчет</button>
+                                     </div>
+                                  </div>
+                             </div>
+                          </div>
+{% endblock %}
+{% block html_block %}
+{{page.html_block|safe}}
+{% endblock %}
+{% block html_block2 %}
+{{page.html_block2|safe}}
+{% endblock %}

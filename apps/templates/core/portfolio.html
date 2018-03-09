@@ -1,0 +1,52 @@
+{% extends 'base-page.html' %}
+{% load static thumbnail %}
+
+{% block content %}
+{{page.content}}
+
+{% endblock %}
+{% block html_block %}
+<div class="section-full p-t80 p-b50">
+
+                <!-- PAGINATION START -->
+                <div class="filter-wrap p-a15">
+                    <ul class="masonry-filter link-style  text-uppercase">
+                        <li class="active"><a data-filter="*" href="#">Все</a></li>
+                            <li><a data-filter=".home" href="#">Дома</a></li>
+                            <li><a data-filter=".building" href="#">Здания</a></li>
+                    </ul>
+                </div>
+                <!-- PAGINATION END -->
+
+                <!-- GALLERY CONTENT START -->
+                 <div class="portfolio-wrap mfp-gallery no-col-gap clearfix" style="position: relative; height: 669px;">
+                     <div class="container-fluid">
+                 	      <div class="row">
+                                <!-- COLUMNS 1 -->
+                                {% for item in portfolio_list %}
+                                <div class="masonry-item {{item.category}} col-lg-3 col-md-6 col-sm-6" style="position: absolute; left: 0px; top: 0px;">
+                                    <div class="wt-box">
+                                        <div class="wt-thum-bx wt-img-overlay2 wt-img-effect zoom">
+                                          {% thumbnail item.image "300x180" crop="center" as im %}
+                                          <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{item.title}}">
+                                          {% endthumbnail %}
+                                            <div class="wt-info-has p-a20">
+                                              <div class="wt-info p-tb10">
+                                                   <h4 class="m-a0">{{item.title}}</h4>
+                                              </div>
+                                              <div class="wt-info-has-text">{{item.description}}</div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+            			</div>
+                    </div>
+                <!-- GALLERY CONTENT END -->
+
+            </div>
+{% endblock %}
+{% block html_block2 %}
+{{page.html_block2}}
+{% endblock %}

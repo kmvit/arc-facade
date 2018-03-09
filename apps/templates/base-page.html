@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static thumbnail %}
+<html lang="en">
+
+{% include 'includes/head.html' %}
+
+<body>
+
+	<div class="page-wraper">
+
+        <!-- HEADER START -->
+        {% include 'includes/header.html' %}
+        <!-- HEADER END -->
+
+        <!-- CONTENT START -->
+        <div class="page-content bg-white">
+
+          <!-- INNER PAGE BANNER -->
+          <div class="wt-bnr-inr overlay-wraper" style="background-image:url( {% static 'images/banner/banner-1.jpg' %} );">
+            <div class="overlay-main bg-black opacity-02"></div>
+              <div class="container">
+                  <div class="wt-bnr-inr-entry">
+                      <h1 class="text-white">{{page.title}}</h1>
+                  </div>
+              </div>
+          </div>
+          <!-- INNER PAGE BANNER END -->
+
+         <!-- BREADCRUMB ROW -->
+          <div class="bg-gray-light p-tb20">
+            <div class="container">
+                  <ul class="wt-breadcrumb breadcrumb-style-2">
+                      <li><a href="/"><i class="fa fa-home"></i> Главная</a></li>
+                      <li>{{page.title}}</li>
+                  </ul>
+              </div>
+          </div>
+          <!-- BREADCRUMB ROW END -->
+
+          <!-- SECTION CONTENT -->
+          {% block content %}
+					{% endblock %}
+          <!-- SECTION CONTENT END -->
+					{% block html_block %}
+					{% endblock %}
+					{% block html_block2 %}
+					{% endblock %}
+
+
+
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START -->
+        {% include 'includes/footer.html' %}
+        <!-- FOOTER END -->
+
+
+        <!-- SCROLL TOP BUTTON -->
+        <button class="scroltop"><span class=" iconmoon-house relative" id="btn-vibrate"></span>Вверх</button>
+
+        <!-- MODAL  LOGIN -->
+        {% include 'includes/modal.html' %}
+        <!-- MODAL LOGIN END -->
+    </div>
+
+{% include 'includes/js.html' %}
+
+<!-- LOADING AREA START ===== -->
+<div class="loading-area">
+    <div class="loading-box"></div>
+    <div class="loading-pic">
+        <div class="loader">
+            <span class="block-1"></span>
+            <span class="block-2"></span>
+            <span class="block-3"></span>
+            <span class="block-4"></span>
+            <span class="block-5"></span>
+            <span class="block-6"></span>
+            <span class="block-7"></span>
+            <span class="block-8"></span>
+            <span class="block-9"></span>
+            <span class="block-10"></span>
+            <span class="block-11"></span>
+            <span class="block-12"></span>
+            <span class="block-13"></span>
+            <span class="block-14"></span>
+            <span class="block-15"></span>
+            <span class="block-16"></span>
+        </div>
+    </div>
+</div>
+<!-- LOADING AREA  END ====== -->
+
+
+</body>
+
+</html>

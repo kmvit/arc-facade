@@ -1,0 +1,26 @@
+/*===================================== 
+YOU CAN WRIGHT CUSTOME CSS 
+======================================*/
+.fullscreen-container, .fullwidthbanner-container{
+    background: url(/static/images/banner/banner-1.jpg);
+    -webkit-background-size: cover; /* Для хрома */
+    -moz-background-size: cover;  /* Для лисы*/
+    -o-background-size: cover;  /* Для оперы*/
+    -ms-background-size: cover;  /* Для ИЭ*/
+    background-size: cover;  /* Для закрипления*/
+}
+.text-banner{
+  /* display: table; */
+  margin: 100px 0 0 80px;
+  color: #fff;
+  font-size: 20px;
+}
+.text-banner .title{
+  font-size: 30px;
+}
+.vertical-align a{
+  color: #fff;
+}
+.size-20{
+  font-size: 20px;
+}

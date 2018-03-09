@@ -1,0 +1,44 @@
+{% load static thumbnail %}
+<div class="section-full bg-white p-t80 p-b50 scale-bg-top scale-bg-bottom">
+    <div class="container">
+        <!-- IMAGE CAROUSEL START -->
+
+          <!-- TITLE START -->
+            <div class="section-head text-center">
+                <h2 class="text-uppercase">Полный список услуг</h2>
+                <div class="wt-separator-outer">
+                    <div class="wt-separator style-square">
+                      <span class="separator-left bg-primary"></span>
+                      <span class="separator-right bg-primary"></span>
+                  </div>
+                </div>
+                <p>Основной деятельностью нашей компании являются услуги в области строительства и реконструкции:</p>
+            </div>
+          <!-- TITLE END -->
+
+            <!-- CAROUSEL -->
+            <div class="section-content">
+
+                <div class="owl-carousel Home-services-carousel owl-btn-vertical-center">
+                    {% for item in service_list %}
+                    <div class="item">
+                      <div class="wt-box bg-white">
+                            <div class="wt-media">
+                                <a href="javascript:void(0);">
+                                  {% thumbnail item.image "300x180" crop="center" as im %}
+                                  <img src="{{im.url}}" alt="{{item.title}}">
+                                  {% endthumbnail %}
+                                </a>
+                            </div>
+                            <div class="wt-info p-tb30">
+                                <h4 class="wt-title m-t0 m-b5"><a href="javascript:void(0);">{{item.title}}</a></h4>
+                                <p>{{item.content|safe|slice:":150"}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+</div>
+</div>
