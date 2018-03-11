@@ -25,7 +25,7 @@ SECRET_KEY = 'c1h(x=9rcgb=^_n^sv6x4efza7@)m1a_e^ni3g^l(86a09e)9e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['arc-fasad.ru']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.core',
     'tinymce',
     'sorl.thumbnail',
+  
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static'),
 )
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

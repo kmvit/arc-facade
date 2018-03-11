@@ -1,0 +1,19 @@
+{% load thumbnail %}
+<div class="widget widget_gallery mfp-gallery">
+                                    <h4 class="widget-title">Наши работы</h4>
+                                    <ul>
+                                        {% for item in portfolio_list %}
+                                        <li>
+                                            <div class="wt-post-thum">
+                                                <a href="{{item.image.url}}" class="mfp-link">
+                                                    {% thumbnail item.image "63x47" crop="center" as im %}
+                                                    <img src="{{im.url}}" alt="{{item.title}}">
+                                                    {% endthumbnail %}
+                                                </a>
+                                               
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                   
+                                </div>

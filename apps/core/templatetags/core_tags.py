@@ -20,3 +20,9 @@ def last_in_portfolio(context):
     portfolio_list = Portfolio.objects.all()
     context_dict = {'portfolio_list':portfolio_list}
     return context_dict
+    
+@register.inclusion_tag('tags/portfolio_aside.html',takes_context=True)
+def portfolio_aside(context):
+    portfolio_list = Portfolio.objects.all()
+    context_dict = {'portfolio_list':portfolio_list}
+    return context_dict

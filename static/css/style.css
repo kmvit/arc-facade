@@ -3263,7 +3263,7 @@ ol.list-num-count.list-outline-none > li:before {
 .wt-separator.style-icon {
 	width:30px;
 	height:30px;
-	line-height:30px;
+	line-height:40px;
 	text-align:center;
 	font-size:18px;
 }
@@ -7991,7 +7991,7 @@ border-right: 3px #fff solid;
 	float:none;
 }
 .header-botton .header-nav .nav > li > a {
-	padding:20px 12px;
+	padding:10px 12px;
 	color:#fff;
 }
 .header-botton .extra-nav {
@@ -8955,7 +8955,7 @@ header .logo{
 	13. header style 7
 -------------------------------------*/
 .header-style-8 .main-bar {
-	max-width:1130px;
+	max-width:650px;
 	margin:0 auto -60px;
 }
 .header-style-8 .is-fixed .header-nav .nav > li > a {
