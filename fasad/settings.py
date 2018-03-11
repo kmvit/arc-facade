@@ -19,13 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c1h(x=9rcgb=^_n^sv6x4efza7@)m1a_e^ni3g^l(86a09e)9e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['arc-fasad.ru']
+
 
 
 # Application definition
@@ -41,7 +39,7 @@ INSTALLED_APPS = [
     'apps.core',
     'tinymce',
     'sorl.thumbnail',
-  
+
 ]
 
 MIDDLEWARE = [
@@ -78,12 +76,6 @@ WSGI_APPLICATION = 'fasad.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -123,13 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, 'static'),
-)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -141,3 +127,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': "1000",
     'height': "600",
 }
+
+try:
+    from .local_settings import *
+except ImportError:
+    raise Exception('Add file local_settings.py')
