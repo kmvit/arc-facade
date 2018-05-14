@@ -73,13 +73,13 @@
 
         <!-- CONTENT START -->
         <div class="page-content bg-white">
-        
+
           <!-- INNER PAGE BANNER -->
           <div class="wt-bnr-inr overlay-wraper" style="background-image:url( {% static 'images/banner/banner-1.jpg' %} );">
             <div class="overlay-main bg-black opacity-02"></div>
               <div class="container">
                   <div class="wt-bnr-inr-entry">
-                      <h1 class="text-white">{% block title-banner %}{{page.title}}{% endblock %}</h1>
+                      <h1 class="text-white">{% block title-banner %}{{page.title}} в {{city.padej}}{% endblock %}</h1>
                   </div>
               </div>
           </div>
@@ -124,18 +124,18 @@
                      </div>
                 </div>
              </div>
-        
+
          <!-- BREADCRUMB ROW -->
           <div class="bg-gray-light p-tb20">
             <div class="container">
                   <ul class="wt-breadcrumb breadcrumb-style-2">
                       <li><a href="/"><i class="fa fa-home"></i> Главная</a></li>
-                      <li>{% block bread %}{{page.title}}{% endblock %}</li>
+                      <li>{% block bread %}{{page.title}} в {{city.padej}}{% endblock %}</li>
                   </ul>
               </div>
           </div>
           <!-- BREADCRUMB ROW END -->
-        
+
           <!-- SECTION CONTENT -->
                     {% block content %}
 					{% endblock %}
@@ -144,7 +144,7 @@
 					{% endblock %}
 					{% block html_block2 %}
 					{% endblock %}
-                    
+
 
 
         </div>

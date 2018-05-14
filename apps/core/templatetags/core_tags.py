@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 from django import template
-from apps.core.models import Page, Portfolio
+from apps.core.models import Page, Portfolio, City
 
 register = template.Library()
 @register.inclusion_tag('tags/menu_item.html', takes_context=True)
 def menu_item(context):
+    request = context['request']
     menu_list = Page.objects.filter(in_menu=True)
+    city_list = City.objects.all()
+
     context_dict = {'menu_list':menu_list}
     return context_dict
 
@@ -20,7 +23,7 @@ def last_in_portfolio(context):
     portfolio_list = Portfolio.objects.all()[:9]
     context_dict = {'portfolio_list':portfolio_list}
     return context_dict
-    
+
 @register.inclusion_tag('tags/portfolio_aside.html',takes_context=True)
 def portfolio_aside(context):
     portfolio_list = Portfolio.objects.all()

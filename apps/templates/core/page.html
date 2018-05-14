@@ -1,7 +1,7 @@
 {% extends 'base-page.html' %}
 {% load static thumbnail %}
-{% block title %}{{page.meta_title}}{% endblock %}
-{% block description %}{{page.description}}{% endblock %}
+{% block title %}{{page.meta_title}} в {{city.padej}}{% endblock %}
+{% block description %}{{page.description}} в {{city.padej}}{% endblock %}
 {% block content %}
 <div class="section-full  p-t10 p-b10  ">
                 <div class="container  bg-white ">
@@ -15,7 +15,11 @@
                                 <h2 class="wt-nav-title">Услуги</h2>
                                 <ul class="wt-nav wt-nav-pills">
                                   {% for item in service_list %}
-                                  <li><a href="{% url 'page' slug=item.slug %}">{{item}}</a></li>
+                                  {% if city.slug == 'pyatigorsk' %}
+                                  <li><a href="{% url 'page_detail' page_slug=item.slug %}">{{item}}</a></li>
+                                  {% else %}
+                                  <li><a href="{% url 'page' city_slug=city.slug slug=item.slug %}">{{item}}</a></li>
+                                  {% endif %}
                                   {% endfor %}
                                 </ul>
                             </div>
@@ -24,9 +28,9 @@
                             <div class="widget bg-white  widget_getintuch">
                                 <h4 class="widget-title">Контакты</h4>
                                 <ul>
-                                  <li><i class="fa fa-map-marker"></i><strong>Адрес</strong> {{page.adress}}  </li>
+                                  <li><i class="fa fa-map-marker"></i><strong>Адрес</strong>г.{{adress.city}}, {{adress.street}}</li>
                                   <li><i class="fa fa-phone"></i><strong>Телефон</strong>8(800)777-1845</li>
-                                  <li><i class="fa fa-envelope"></i><strong>Email</strong>info@arh-fasad.ru</li>
+                                  <li><i class="fa fa-envelope"></i><strong>Email</strong>info@arc-fasad.ru</li>
                                 </ul>
                             </div>
                         </div>
@@ -35,6 +39,30 @@
                         <!-- RIGHT PART -->
                         <div class="col-md-9 col-sm-9 p-tb10">
                             <!-- BLOG POST CAROUSEL -->
+                            {% if page.title == 'Фасадный декор' %}
+                            <div class="section-content">
+                                <div class="row">
+                                  {% for item in decor_list %}
+                                    <div class="col-md-4 col-sm-4 p-tb15">
+                                        <div class="wt-box bg-white">
+                                            <div class="wt-media">
+                                              <a href="{% url 'page_detail' page_slug=item.slug %}">
+                                                {% thumbnail item.image "300x180" crop="center" as im %}
+                                                <img src="{{im.url}}" alt="{{item.title}}">
+                                                {% endthumbnail %}
+                                              </a>
+                                            </div>
+                                            <div class="wt-info p-tb30">
+                                                <h4 class="wt-title m-t0">
+                                                  <a href="{% url 'page_detail' page_slug=item.slug %}">{{item.title}}</a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                             {% endif %}
                              <div class="section-content ">
                                 {{page.content|safe}}
                              </div>
@@ -58,7 +86,7 @@
                                                      </div>
                                                      <div class="icon-content text-secondry">
                                                          <h5 class="wt-tilte text-uppercase m-b5">Производство</h5>
-                                                         <p>Собственное производство<br> фасадного декора .</p>
+                                                         <p>Собственное производство<br> фасадного декора в {{city.padej}}</p>
                                                      </div>
                                                  </div>
                                              </div>
@@ -84,7 +112,7 @@
                                   </div>
                              </div>
                           </div>
-                          
+
 {% endblock %}
 {% block html_block %}
 <div class="section-full  p-t50 p-b10  ">

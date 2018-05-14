@@ -15,7 +15,7 @@
                                 <h2 class="wt-nav-title">Варианты декора</h2>
                                 <ul class="wt-nav wt-nav-pills">
                                   {% for item in decor_list %}
-                                  <li><a href="{% url 'page' slug=item.slug %}">{{item}}</a></li>
+                                  <li><a href="{% url 'page_detail' page_slug=item.slug %}">{{item}}</a></li>
                                   {% endfor %}
                                 </ul>
                             </div>
@@ -29,7 +29,7 @@
                                   <li><i class="fa fa-envelope"></i><strong>Email</strong>info@arh-fasad.ru</li>
                                 </ul>
                             </div>
-                            
+
                         </div>
                         <!-- LEFT PART -->
 

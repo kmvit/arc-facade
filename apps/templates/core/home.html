@@ -18,7 +18,7 @@
                     <p class="title"> Мы предлагаем:</p>
                     <ol class="list-num-count vertical-align">
                       {% for item in service_list %}
-                      <li><a href="{% url 'page' slug=item.slug %}">{{item}}</a></li>
+                      <li><a href="{% url 'page_detail' page_slug=item.slug %}">{{item}}</a></li>
                       {% endfor %}
                     </ol>
                   </div>
@@ -108,14 +108,14 @@
                     <div class="item">
                       <div class="wt-box bg-white">
                             <div class="wt-media">
-                                <a href="{% url 'page' slug=item.slug %}">
+                                <a href="{% url 'page_detail' page_slug=item.slug %}">
                                   {% thumbnail item.image "350x180" crop="center" as im %}
                                   <img src="{{im.url}}" alt="{{item.title}}">
                                   {% endthumbnail %}
                                 </a>
                             </div>
                             <div class="wt-info p-tb30">
-                                <h4 class="wt-title m-t0 m-b5"><a href="{% url 'page' slug=item.slug %}">{{item.title}}</a></h4>
+                                <h4 class="wt-title m-t0 m-b5"><a href="{% url 'page_detail' page_slug=item.slug %}">{{item.title}}</a></h4>
 
                             </div>
                         </div>
@@ -264,7 +264,7 @@
                         <p>Читайте наши статьи о строительстве и будьте в курсе последних новинок и тендеций в строительной теме</p>
                     </div>
                     <!-- TITLE -->
-                    
+
                     <div class="section-content ">
                         <div class="row">
                             {% for item in news_list %}
@@ -274,7 +274,7 @@
                                         {% thumbnail item.image "350x180" crop="center" as im %}
                                         <a href="{% url 'news:news_detail' slug=item.slug %}"><img src="{{im.url}}" alt="{{item.title}}"></a>
                                          {% endthumbnail %}
-                                        
+
                                     </div>
                                     <div class="wt-post-info p-a30 p-b20 bg-white">
                                         <div class="wt-post-title ">
@@ -286,7 +286,7 @@
                                             </ul>
                                         </div>
                                         <div class="wt-post-text">
-                                            <p>{{item.description}}</p> 
+                                            <p>{{item.description}}</p>
                                         </div>
                                     </div>
                                 </div>

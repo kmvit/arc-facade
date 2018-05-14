@@ -6,11 +6,17 @@ from django.template.defaultfilters import slugify
 
 class City(models.Model):
     title = models.CharField(max_length=300)
+    padej = models.CharField(max_length=300, default='Пятегорске')
     slug = slug = models.SlugField(unique=True, blank=True)
     def __str__(self):
         return self.title
-        
-        
+
+class Adress(models.Model):
+    street = models.CharField(max_length=300)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.street
+
 class PageSkeleton(models.Model):
     """Base model for all models"""
     title = models.CharField(max_length=400)
@@ -19,9 +25,7 @@ class PageSkeleton(models.Model):
     description = models.CharField(max_length=300)
     is_active = models.BooleanField(default=False)
     in_menu = models.BooleanField(default=False)
-    city = models.ForeignKey(City, on_delete=models.CASCADE, blank=True, default=1)
     content = tinymce_models.HTMLField(blank=True)
-    adress = models.CharField(max_length=600, default='Пятигорск, Бештаугорское шоссе')
     def __str__(self):
         return self.title
 

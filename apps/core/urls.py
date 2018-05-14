@@ -16,18 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from apps.core.views import *
-from django.conf.urls.static import static
-from django.conf import settings
+
+
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home, name='home'),
-    path('tinymce/', include('tinymce.urls')),
-    path('news/', include('apps.news.urls')),
-    path('<page_slug>/', page_detail, name='page_detail'),
-    path('<city_slug>/<slug>/', include('apps.core.urls')),
-
-
+    path('', page, name='page'),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

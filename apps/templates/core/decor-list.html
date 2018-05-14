@@ -15,7 +15,7 @@
                                 <h2 class="wt-nav-title">Услуги</h2>
                                 <ul class="wt-nav wt-nav-pills">
                                   {% for item in service_list %}
-                                  <li><a href="{% url 'page' slug=item.slug %}">{{item}}</a></li>
+                                  <li><a href="{% url 'page_detail' page_slug=item.slug %}">{{item}}</a></li>
                                   {% endfor %}
                                 </ul>
                             </div>
@@ -42,14 +42,22 @@
                                     <div class="col-md-4 col-sm-4 p-tb15">
                                         <div class="wt-box bg-white">
                                             <div class="wt-media">
-                                                <a href="{% url 'page' slug=item.slug %}">
-                                                  {% thumbnail item.image "300x180" crop="center" as im %}
-                                                  <img src="{{im.url}}" alt="{{item.title}}">
-                                                  {% endthumbnail %}
-                                                </a>
+                                              {% if city.slug == 'pyatigorsk' %}
+                                              <a href="{% url 'page_detail' page_slug=item.slug %}">
+                                                {% thumbnail item.image "300x180" crop="center" as im %}
+                                                <img src="{{im.url}}" alt="{{item.title}}">
+                                                {% endthumbnail %}
+                                              </a>
+                                              {% else %}
+                                              <a href="{% url 'page' slug=item.slug %}">
+                                                {% thumbnail item.image "300x180" crop="center" as im %}
+                                                <img src="{{im.url}}" alt="{{item.title}}">
+                                                {% endthumbnail %}
+                                              </a>
+                                              {% endif %}
                                             </div>
                                             <div class="wt-info p-tb30">
-                                                <h4 class="wt-title m-t0"><a href="{% url 'page' slug=item.slug %}">{{item.title}}</a></h4>
+                                                <h4 class="wt-title m-t0"><a href="{% url 'page_detail' page_slug=item.slug %}">{{item.title}}</a></h4>
 
                                                 <a href="javascript:void(0);" class="site-button outline   black"><strong class="text-center">Подробнее</strong></a>
                                             </div>
