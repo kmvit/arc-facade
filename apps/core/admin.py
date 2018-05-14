@@ -7,3 +7,4 @@ class PageAdmin(admin.ModelAdmin):
 admin.site.register(Page, PageAdmin)
 admin.site.register(Portfolio)
 admin.site.register(Banner)
+admin.site.register(City)

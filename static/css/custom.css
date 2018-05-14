@@ -1,6 +1,6 @@
-/*===================================== 
-YOU CAN WRIGHT CUSTOME CSS 
-======================================*/
+/*===================================== 
+YOU CAN WRIGHT CUSTOME CSS 
+======================================*/
 .fullscreen-container, .fullwidthbanner-container{
     background: url(/static/images/banner/banner-1.jpg);
     -webkit-background-size: cover; /* Для хрома */
@@ -23,4 +23,10 @@ YOU CAN WRIGHT CUSTOME CSS
 }
 .size-20{
   font-size: 20px;
+}
+.min-height-460{
+    min-height:460px;
+}
+.credit img{
+    width:170px !important;
 }

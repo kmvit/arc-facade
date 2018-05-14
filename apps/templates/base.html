@@ -2,7 +2,65 @@
 {% load static %}
 <html lang="en">
 
-{% include 'includes/head.html' %}
+<head>
+
+	<!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="" />
+    <meta name="description" content="{% block description %}Фасадные решения{% endblock %}" />
+
+    <!-- FAVICONS ICON -->
+    <link rel="icon" href="{% static 'images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+
+    <!-- PAGE TITLE HERE -->
+    <title>{% block title %}Фасадные решения{% endblock %}</title>
+
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- [if lt IE 9]>
+        <script src="{% static 'js/html5shiv.min.js' %}"></script>
+        <script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif] -->
+
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- FONTAWESOME STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome/css/font-awesome.min.css' %}" />
+    <!-- FLATICON STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flaticon.min.css' %}">
+    <!-- ANIMATE STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
+    <!-- OWL CAROUSEL STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- BOOTSTRAP SELECT BOX STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.min.css' %}">
+    <!-- MAGNIFIC POPUP STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.min.css' %}">
+    <!-- LOADER STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loader.min.css' %}">
+    <!-- MAIN STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- THEME COLOR CHANGE STYLE SHEET -->
+    <link rel="stylesheet" class="skin" type="text/css" href="{% static 'css/skin/skin-8.css' %}">
+    <!-- CUSTOM  STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+
+
+
+    <!-- REVOLUTION SLIDER CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/revolution/revolution/css/settings.css' %}">
+    <!-- REVOLUTION NAVIGATION STYLE -->
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/revolution/revolution/css/navigation.css' %}">
+
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800italic,800,700italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round:400,400i&amp;subset=latin-ext" rel="stylesheet">
+
+</head>
 
 <body>
 
@@ -57,54 +115,20 @@
                     <div class="row">
                         <div class="col-md-8 col-sm-8">
                             <div class="call-to-action-left p-tb20 p-r50">
-                                <h4 class="text-uppercase m-b10">Закажите расчет сметы прямо сейчас</h4>
+                                <h4 class="text-uppercase m-b10">Узнайте стоимость ремонта фасада</h4>
                                 <p>Наш специалист приедет и составит для вас смету абсолютно бесплатно.</p>
                             </div>
                         </div>
 
                         <div class="col-md-3">
                             <div class="call-to-action-right p-tb30">
-                                <button type="button" class="site-button-secondry m-r15 text-uppercase font-weight-600 " data-toggle="modal" data-target="#with-form">Вызвать специалиста<i class="fa fa-angle-double-right"></i></button>
+                                <button type="button" class="site-button-secondry m-r15 text-uppercase font-weight-600 " data-toggle="modal" data-target="#with-form">Узнать стоимость<i class="fa fa-angle-double-right"></i></button>
                             </div>
                         </div>
                     </div>
                  </div>
             </div>
-						<div id="with-form" class="modal fade" role="dialog" style="display: none;">
-                                  <div class="modal-dialog" style="margin-top: 20.5px;">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                      <div class="modal-header bg-primary">
-                                        <button type="button" class="close" data-dismiss="modal">×</button>
-                                        <h4 class="modal-title text-white">Заказать расчет</h4>
-                                      </div>
-                                      <div class="modal-body">
-                                        <form id="demo-form" class="form-horizontal mb-lg" novalidate="">
-                                            <div class="form-group mt-lg">
-                                                <label class="col-sm-3 control-label">Имя</label>
-                                                <div class="col-sm-9">
-                                                    <input name="name" class="form-control" placeholder="Введите Имя..." required="" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Телефон</label>
-                                                <div class="col-sm-9">
-                                                    <input name="email" class="form-control" placeholder="Введите номер..." required="" type="email">
-                                                </div>
-                                            </div>
-                                        </form>
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button type="button" class="site-button  m-r15" data-dismiss="modal">Закрыть
-                                         <i class="fa fa-angle-double-right"></i></button>
-
-                                        <button type="button" class="site-button ">Отправить
-                                         <i class="fa fa-angle-double-right"></i></button>
-
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+						
             <!-- TESTIMONIAL SECTION START -->
             {% block testimonials %}
             {% endblock %}
@@ -138,31 +162,7 @@
 
 {% include 'includes/js.html' %}
 
-<!-- LOADING AREA START ===== -->
-<div class="loading-area">
-    <div class="loading-box"></div>
-    <div class="loading-pic">
-        <div class="loader">
-            <span class="block-1"></span>
-            <span class="block-2"></span>
-            <span class="block-3"></span>
-            <span class="block-4"></span>
-            <span class="block-5"></span>
-            <span class="block-6"></span>
-            <span class="block-7"></span>
-            <span class="block-8"></span>
-            <span class="block-9"></span>
-            <span class="block-10"></span>
-            <span class="block-11"></span>
-            <span class="block-12"></span>
-            <span class="block-13"></span>
-            <span class="block-14"></span>
-            <span class="block-15"></span>
-            <span class="block-16"></span>
-        </div>
-    </div>
-</div>
-<!-- LOADING AREA  END ====== -->
+
 
 
 </body>

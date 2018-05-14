@@ -1,4 +1,39 @@
 {% load static %}
+<div id="with-form" class="modal fade" role="dialog" style="display: none;">
+                                  <div class="modal-dialog" style="margin-top: 20.5px;">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header bg-primary">
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                        <h4 class="modal-title text-white">Заказать расчет</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form id="demo-form" class="form-horizontal mb-lg" novalidate="">
+                                            <div class="form-group mt-lg">
+                                                <label class="col-sm-3 control-label">Имя</label>
+                                                <div class="col-sm-9">
+                                                    <input name="name" class="form-control" placeholder="Введите Имя..." required="" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Телефон</label>
+                                                <div class="col-sm-9">
+                                                    <input name="email" class="form-control" placeholder="Введите номер..." required="" type="email">
+                                                </div>
+                                            </div>
+                                        </form>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="site-button  m-r15" data-dismiss="modal">Закрыть
+                                         <i class="fa fa-angle-double-right"></i></button>
+
+                                        <button type="button" class="site-button ">Отправить
+                                         <i class="fa fa-angle-double-right"></i></button>
+
+                                      </div>
+                                    </div>
+    </div>
+</div>
 <div id="Login-form" class="modal fade " role="dialog">
   <div class="modal-dialog modal-sm">
     <!-- Modal content-->

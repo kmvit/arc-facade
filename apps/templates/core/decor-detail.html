@@ -1,6 +1,7 @@
 {% extends 'base-page.html' %}
 {% load static thumbnail %}
-
+{% block title %}{{page.meta_title}}{% endblock %}
+{% block description %}{{page.description}}{% endblock %}
 {% block content %}
 <div class="section-full  p-t80 p-b50  ">
                 <div class="container  bg-white ">
@@ -28,6 +29,7 @@
                                   <li><i class="fa fa-envelope"></i><strong>Email</strong>info@arh-fasad.ru</li>
                                 </ul>
                             </div>
+                            
                         </div>
                         <!-- LEFT PART -->
 

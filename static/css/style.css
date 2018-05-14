@@ -8679,7 +8679,7 @@ header .logo{
 	4. when header is sticky
 -------------------------------------*/
 .is-fixed .main-bar {
-	position:fixed;
+
 	top:0;
 	left:0;
 }
@@ -8955,7 +8955,7 @@ header .logo{
 	13. header style 7
 -------------------------------------*/
 .header-style-8 .main-bar {
-	max-width:650px;
+	max-width:750px;
 	margin:0 auto -60px;
 }
 .header-style-8 .is-fixed .header-nav .nav > li > a {
@@ -8970,6 +8970,7 @@ header .logo{
 	max-width:100%;
 }
 .header-style-8 .is-fixed .main-bar {
+    position:fixed;
 	margin:0 -565px;
 	left:50%;
 }

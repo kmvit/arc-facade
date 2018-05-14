@@ -1,8 +1,9 @@
 {% extends 'base-page.html' %}
 {% load static thumbnail %}
-
+{% block title %}{{page.meta_title}}{% endblock %}
+{% block description %}{{page.description}}{% endblock %}
 {% block content %}
-<div class="section-full  p-t80 p-b50  ">
+<div class="section-full  p-t10 p-b10  ">
                 <div class="container  bg-white ">
                         <div class="row">
                         <!-- LEFT PART -->
@@ -23,7 +24,7 @@
                             <div class="widget bg-white  widget_getintuch">
                                 <h4 class="widget-title">Контакты</h4>
                                 <ul>
-                                  <li><i class="fa fa-map-marker"></i><strong>Адрес</strong> Пятигорск, Бештаугорское шоссе  </li>
+                                  <li><i class="fa fa-map-marker"></i><strong>Адрес</strong> {{page.adress}}  </li>
                                   <li><i class="fa fa-phone"></i><strong>Телефон</strong>8(800)777-1845</li>
                                   <li><i class="fa fa-envelope"></i><strong>Email</strong>info@arh-fasad.ru</li>
                                 </ul>
@@ -35,17 +36,6 @@
                         <div class="col-md-9 col-sm-9 p-tb10">
                             <!-- BLOG POST CAROUSEL -->
                              <div class="section-content ">
-                                 <div class="section-head text-center p-tb50">
-                                    <h2 class="text-uppercase">{{page.title}}</h2>
-                                    <div class="wt-separator-outer ">
-                                        <div class="wt-separator text-primary style-icon">
-                                            <i class="flaticon-construction-9"></i>
-                                            <span class="separator-left bg-gray"></span>
-                                            <span class="separator-right bg-gray"></span>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
                                 {{page.content|safe}}
                              </div>
 
@@ -96,9 +86,8 @@
                           </div>
                           
 {% endblock %}
-
 {% block html_block %}
-<div class="section-full  p-t80 p-b50  ">
+<div class="section-full  p-t50 p-b10  ">
                 <div class="container  bg-white ">
                         <div class="row">
                         <!-- RIGHT PART -->
@@ -121,6 +110,7 @@
              </div>
 {% endblock %}
 {% block html_block2 %}
+{% if html_block2 %}
 <div class="section-full  p-t80 p-b50  ">
                 <div class="container  bg-white ">
                         <div class="row">
@@ -134,5 +124,6 @@
                     </div>
                 </div>
              </div>
+{% endif %}
 {% include 'includes/how_we_work.html' %}
 {% endblock %}

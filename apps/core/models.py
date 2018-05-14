@@ -4,19 +4,26 @@ from tinymce import models as tinymce_models
 from django.template.defaultfilters import slugify
 # Create your models here.
 
-
+class City(models.Model):
+    title = models.CharField(max_length=300)
+    slug = slug = models.SlugField(unique=True, blank=True)
+    def __str__(self):
+        return self.title
+        
+        
 class PageSkeleton(models.Model):
     """Base model for all models"""
     title = models.CharField(max_length=400)
     slug = models.SlugField(unique=True, blank=True)
-    keywords = models.CharField(max_length=1000)
-    description = models.CharField(max_length=1500)
+    meta_title = models.CharField(max_length=80, default='Поменять title страницы')
+    description = models.CharField(max_length=300)
     is_active = models.BooleanField(default=False)
+    in_menu = models.BooleanField(default=False)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, blank=True, default=1)
     content = tinymce_models.HTMLField(blank=True)
+    adress = models.CharField(max_length=600, default='Пятигорск, Бештаугорское шоссе')
     def __str__(self):
         return self.title
-
-
 
 class Page(PageSkeleton):
     """Model for all Page"""

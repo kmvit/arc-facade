@@ -24,14 +24,14 @@
                     <div class="item">
                       <div class="wt-box bg-white">
                             <div class="wt-media">
-                                <a href="javascript:void(0);">
+                                <a href="{% url 'page' slug=item.slug %}">
                                   {% thumbnail item.image "300x180" crop="center" as im %}
                                   <img src="{{im.url}}" alt="{{item.title}}">
                                   {% endthumbnail %}
                                 </a>
                             </div>
                             <div class="wt-info p-tb30">
-                                <h4 class="wt-title m-t0 m-b5"><a href="javascript:void(0);">{{item.title}}</a></h4>
+                                <h4 class="wt-title m-t0 m-b5"><a href="{% url 'page' slug=item.slug %}">{{item.title}}</a></h4>
                                 <p>{{item.content|safe|slice:":150"}}</p>
                             </div>
                         </div>

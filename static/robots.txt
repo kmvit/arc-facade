@@ -1,2 +1,19 @@
 User-agent: *
-Disallow: /
+Disallow: /admin
+Disallow: /static/css
+Allow: /static/css/images
+Disallow: /*?
+
+User-agent: Yandex
+Disallow: /admin
+Disallow: /static/css
+Allow: /static/css/images
+Disallow: /*?
+
+User-agent: Googlebot
+Disallow: /admin
+Disallow: /static/css
+Allow: /static/css/images
+Disallow: /*?
+
+Host: arc-fasad.ru

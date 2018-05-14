@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static thumbnail %}
 {% load core_tags %}
+{% block title %}{{page.meta_title}}{% endblock %}
+{% block description %}{{page.description}}{% endblock %}
 {% block slider %}
 
 <div class="main-slider style-two default-banner">
@@ -11,7 +13,7 @@
           <div id="rev_slider_1014_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="typewriter-effect" data-source="gallery">
             <div class="container">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <div class="text-banner">
                     <p class="title"> Мы предлагаем:</p>
                     <ol class="list-num-count vertical-align">
@@ -21,9 +23,8 @@
                     </ol>
                   </div>
                 </div>
-                  <div class="col-md-6">
-                    df
-                      <img src="{% static 'images/banner/afternow.png' %}" alt="" class="img-fluid">
+                  <div class="col-md-7">
+                      <img src="{% static 'images/banner/afternow.png' %}" alt="Ремонт фасадов зданий и сооружений" class="img-fluid">
                   </div>
               </div>
             </div>
@@ -48,8 +49,8 @@
                                             </div>
                                         </div>
                                         <div class="icon-content text-secondry">
-                                            <h5 class="wt-tilte text-uppercase m-b5">Производство</h5>
-                                            <p>Собственное производство<br/> фасадного декора .</p>
+                                            <h5 class="wt-tilte text-uppercase m-b5">Рассрочка</h5>
+                                            <p>С картой "халва"<br/> плати в рассрочку.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -61,16 +62,16 @@
                                             </div>
                                         </div>
                                         <div class="icon-content text-secondry">
-                                            <h5 class="wt-tilte text-uppercase m-b0">Профессионалы</h5>
-                                            <p>Только высококвалифицированные <br/>специалисты .</p>
+                                            <h5 class="wt-tilte text-uppercase m-b0">Легко и удобно</h5>
+                                            <p>Делаем сейчас <br/>а платите вы потом .</p>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-3 p-t50 p-b50 col-md-offset-1 our-value-right">
-                            <button type="button" class="site-button-secondry m-r15 text-uppercase font-weight-600 " data-toggle="modal" data-target="#with-form">Заказать расчет</button>
+                        <div class="col-md-3 col-sm-3 p-t10 col-md-offset-1 our-value-right credit">
+                            <a href="/halva"><img src="{% static '/images/banner/credit.png' %}"></a>
                         </div>
                      </div>
                 </div>
@@ -107,14 +108,14 @@
                     <div class="item">
                       <div class="wt-box bg-white">
                             <div class="wt-media">
-                                <a href="javascript:void(0);">
+                                <a href="{% url 'page' slug=item.slug %}">
                                   {% thumbnail item.image "350x180" crop="center" as im %}
                                   <img src="{{im.url}}" alt="{{item.title}}">
                                   {% endthumbnail %}
                                 </a>
                             </div>
                             <div class="wt-info p-tb30">
-                                <h4 class="wt-title m-t0 m-b5"><a href="javascript:void(0);">{{item.title}}</a></h4>
+                                <h4 class="wt-title m-t0 m-b5"><a href="{% url 'page' slug=item.slug %}">{{item.title}}</a></h4>
 
                             </div>
                         </div>
@@ -249,5 +250,50 @@
 </div>
 {% endblock %}
 {% block latest-blog %}
-
+    <div class="section-full latest-blog bg-gray p-t80 p-b50">
+                <div class="container">
+                	<!-- TITLE -->
+                    <div class="section-head text-center">
+                        <h2 class="text-uppercase">Последние новости в строительстве</h2>
+                        <div class="wt-separator-outer">
+                            <div class="wt-separator style-square">
+                                <span class="separator-left bg-primary"></span>
+                                <span class="separator-right bg-primary"></span>
+                            </div>
+                        </div>
+                        <p>Читайте наши статьи о строительстве и будьте в курсе последних новинок и тендеций в строительной теме</p>
+                    </div>
+                    <!-- TITLE -->
+                    
+                    <div class="section-content ">
+                        <div class="row">
+                            {% for item in news_list %}
+                            <div class="col-md-4 col-sm-4">
+                                <div class="blog-post latest-blog-1 date-style-3">
+                                    <div class="wt-post-media wt-img-effect zoom-slow">
+                                        {% thumbnail item.image "350x180" crop="center" as im %}
+                                        <a href="{% url 'news:news_detail' slug=item.slug %}"><img src="{{im.url}}" alt="{{item.title}}"></a>
+                                         {% endthumbnail %}
+                                        
+                                    </div>
+                                    <div class="wt-post-info p-a30 p-b20 bg-white">
+                                        <div class="wt-post-title ">
+                                            <h3 class="post-title"><a href="{% url 'news:news_detail' slug=item.slug %}">{{item.titlel}}</a></h3>
+                                        </div>
+                                        <div class="wt-post-meta ">
+                                            <ul>
+                                                 <li class="post-date"> <i class="fa fa-calendar"></i><strong>{{ item.born|date:"d M" }}</strong> <span> {{ item.born|date:"Y" }}</span> </li>
+                                            </ul>
+                                        </div>
+                                        <div class="wt-post-text">
+                                            <p>{{item.description}}</p> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
 {% endblock %}
