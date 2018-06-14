@@ -11,5 +11,9 @@ class News(models.Model):
     content = tinymce_models.HTMLField()
     born = models.DateField(default=datetime.datetime.today())
     
+    class Meta:
+        verbose_name_plural = 'Новости'
+        ordering = ['-born']
+    
     def __str__(self):
         return self.title
