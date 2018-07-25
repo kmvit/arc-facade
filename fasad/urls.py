@@ -45,7 +45,7 @@ urlpatterns = [
     path('news/', include('apps.news.urls')),
     path('<page_slug>/', page_detail, name='page_detail'),
     path('<city_slug>/<slug>/', include('apps.core.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+    path('sitemap.xml/', sitemap, {'sitemaps': sitemaps},
      name='django.contrib.sitemaps.views.sitemap')
 
 
