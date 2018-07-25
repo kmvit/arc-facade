@@ -18,7 +18,25 @@ from django.urls import path, include
 from apps.core.views import *
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import Sitemap
+from apps.core.models import Page
+from django.urls import reverse
 
+
+class CityViewSitemap(Sitemap):
+    changefreq = "never"
+    priority = 0.5
+
+    def items(self):
+        return City.objects.all()
+
+    def location(self, obj):
+        return '/' + obj.slug
+
+sitemaps = {
+    'articles': CityViewSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +45,8 @@ urlpatterns = [
     path('news/', include('apps.news.urls')),
     path('<page_slug>/', page_detail, name='page_detail'),
     path('<city_slug>/<slug>/', include('apps.core.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+     name='django.contrib.sitemaps.views.sitemap')
 
 
 ]
