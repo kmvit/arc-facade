@@ -12,6 +12,9 @@ def home(request):
     context = {'service_list':service_list, 'page':page, 'banner_list': banner_list, 'news_list': news_list}
     return render (request, 'core/home.html', context)
 
+def sitemapview(request):
+    return render(request, 'sitemap.xml', content_type="application/xhtml+xml")
+
 def page(request, city_slug, slug):
     page = get_object_or_404(Page, slug=slug)
     city = get_object_or_404(City, slug=city_slug)
